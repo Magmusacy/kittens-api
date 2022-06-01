@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="flash notice"><%= notice %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="flash alert"><%= alert %></div>
+    <% end %>
+
+    <div class="header">
+      <%= link_to "homepage", root_path %>
+      <%= link_to "create kitten", new_kitten_path %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

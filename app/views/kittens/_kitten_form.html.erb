@@ -1,0 +1,27 @@
+<h1><%= action_name.capitalize %> kitten</h1>
+
+<%= form_with model: @kitten do |form| %>
+  <div>
+    <%= form.label :name, "Name:" %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :age, "Age:" %>
+    <%= form.number_field :age, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :cuteness, "Cuteness:" %>
+    <%= form.number_field :cuteness, required: true, min: 0, max: 10 %>
+  </div>
+
+  <div>
+    <%= form.label :softness, "Softness:" %>
+    <%= form.number_field :softness, required: true, min: 0, max: 10 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
